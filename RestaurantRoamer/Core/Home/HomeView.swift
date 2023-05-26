@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
         // MARK: Bucket List
         VStack (alignment: .leading) {
             HStack(alignment: .bottom) {
                 Image(systemName: "basket.fill")
                     .foregroundColor(Color(hex: Constants.Color.primaryOrange))
-                    .cornerRadius(8)
+
                 Text("Bucketlist")
                     .foregroundColor(.black)
             }
@@ -24,6 +25,7 @@ struct HomeView: View {
             // MARK: Bucket List Card
             ScrollView {
                 VStack() {
+//                    ForEach(<#T##Data#>, content: <#T##(Data.Element) -> Content#>)
                     BucketListCardComponent()
                     BucketListCardComponent()
                     BucketListCardComponent()
@@ -35,7 +37,7 @@ struct HomeView: View {
                     BucketListCardComponent()
                     BucketListCardComponent()
                 }
-                .padding(.bottom, 60)
+                .padding(.bottom, 30)
             }
         }
     }

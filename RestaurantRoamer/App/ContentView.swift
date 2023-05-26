@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var tabSelection = 1
+    
     var body: some View {
         NavigationView() {
             ZStack {
@@ -17,36 +18,28 @@ struct ContentView: View {
                         .padding()
                     
                     NavigationStack {
-                        RestaurantRoamerMapViewRepresentable()
-                            .ignoresSafeArea()
+                        ZStack(alignment: .top) {
+                            RestaurantRoamerMapViewRepresentable()
+                                .ignoresSafeArea()
+                            
+                            HStack {
+                                VStack{
+                                    SearchButtonView()
+                                    
+//                                    RecenterButtonView()
+                                }
+                            }
+                        }
                     }
                     .tag(2)
                     
                     ReviewView().tag(3)
                         .padding()
-//                        .animation(.linear, value: 1)
                 }
-                if (tabSelection == 2){
-                    ZStack {
-                        Button {
-                            tabSelection = 1
-                        } label: {
-                            VStack(alignment: .leading){
-                                Image(systemName: "chevron.left.circle.fill")
-                                    .foregroundColor(.orange)
-                            }
-                            .font(.largeTitle)
-                            .frame(maxWidth: .infinity)
-                        }
-                        .position(CGPoint(x: 32, y: 24))
-                    }
-                } else {
-                    VStack {
-                        CustomTabComponent(tabSelection: $tabSelection)
-                    }
-                    .frame(maxHeight: .infinity, alignment: .bottom)
-
+                VStack {
+                    CustomTabComponent(tabSelection: $tabSelection)
                 }
+                .frame(maxHeight: .infinity, alignment: .bottom)
             }
         }
     }

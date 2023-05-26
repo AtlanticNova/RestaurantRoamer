@@ -14,7 +14,7 @@ struct ReviewView: View {
             HStack(alignment: .bottom) {
                 Image(systemName: "star.fill")
                     .foregroundColor(Color(hex: Constants.Color.primaryOrange))
-                    .cornerRadius(8)
+                
                 Text("Review")
                     .foregroundColor(.black)
             }
@@ -37,7 +37,6 @@ struct ReviewView: View {
                 }
                 .padding(.bottom, 60)
             }
-
         }
     }
 }

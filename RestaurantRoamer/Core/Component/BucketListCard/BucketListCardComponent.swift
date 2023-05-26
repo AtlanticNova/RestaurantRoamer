@@ -10,25 +10,31 @@ import SwiftUI
 struct BucketListCardComponent: View {
     var body: some View {
         ZStack {
-            HStack{
-                Image("Garmin")
+            HStack {
+                Image("")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 64, height: 64)
+                    .background(
+                        Text("Image")
+                        .foregroundColor(.gray)
+                    )
                     .clipped()
                 VStack(alignment: .leading) {
                     Text("Restaurant Name")
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 2, trailing: 0))
                         .font(.system(.body, design: .rounded))
                         .fontWeight(.bold)
                     Text("Restaurant Address")
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 6, trailing: 0))
                         .font(.system(.caption, design: .rounded))
+                        .foregroundColor(Color.gray)
                     Text("800 m")
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
                         .font(.system(.caption, design: .rounded))
+                        .foregroundColor(Color.gray)
                 }
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 Spacer()
                 
                 Button{
@@ -42,18 +48,22 @@ struct BucketListCardComponent: View {
                             .background(Color.red,
                                         in: RoundedRectangle(cornerRadius: 8)
                             )
-//                            .padding(.top, )
                     }
                 }
             }
             .padding(8)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(.orange, lineWidth: 2)
+            )
             .background(
-                Color(hex: Constants.Color.primaryOrange),
-                        in: RoundedRectangle(cornerRadius: 8)
+                Color(.white),
+                in: RoundedRectangle(cornerRadius: 8)
             )
         }
         .frame(height: 80)
-        .padding(.top)
+        .padding(.horizontal, 3)
+        .padding(.vertical, 8)
     }
 }
 
