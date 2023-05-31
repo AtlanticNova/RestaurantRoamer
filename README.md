@@ -1,2 +1,2 @@
 # RestaurantRoamer
- Nano Challenge 2 Application
+Restaurant Roamer is an app that designed to help you fulfill your culinary bucket list! Whether you're a foodie, an adventurous eater, or simply someone looking to explore the diverse world of gastronomy, this app is your gateway to unforgettable dining experiences. With Restaurant Roamer, you can discover and explore a wide range of exceptional restaurants, from hidden gems to Michelin-starred establishments, all tailored to suit your unique preferences and desires. Say goodbye to mundane dining choices and hello to a world of tantalizing flavors and exquisite culinary masterpieces.
