@@ -13,15 +13,21 @@ struct ContentView: View {
     var body: some View {
         NavigationView() {
             ZStack {
+                // MARK: Tab View
                 TabView(selection: $tabSelection){
+                    
+                    // MARK: Home View
                     HomeView().tag(1)
                         .padding()
                     
+                    // MARK: Navigation Stack
                     NavigationStack {
                         ZStack(alignment: .top) {
+                            // MARK: Map View
                             RestaurantRoamerMapViewRepresentable()
                                 .ignoresSafeArea()
                             
+                            // MARK: Upper Button
                             HStack {
                                 VStack{
                                     SearchButtonView()
@@ -33,10 +39,12 @@ struct ContentView: View {
                     }
                     .tag(2)
                     
+                    // MARK: Review View
                     ReviewView().tag(3)
                         .padding()
                 }
                 VStack {
+                    // MARK: Tab Component
                     CustomTabComponent(tabSelection: $tabSelection)
                 }
                 .frame(maxHeight: .infinity, alignment: .bottom)

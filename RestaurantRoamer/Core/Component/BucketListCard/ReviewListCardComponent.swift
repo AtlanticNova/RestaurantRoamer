@@ -11,6 +11,7 @@ struct ReviewListCardComponent: View {
     var body: some View {
         ZStack {
             HStack {
+//                Image
                 Image("")
                     .resizable()
                     .scaledToFill()
@@ -20,6 +21,8 @@ struct ReviewListCardComponent: View {
                         .foregroundColor(.gray)
                     )
                     .clipped()
+                
+//                Text
                 VStack(alignment: .leading) {
                     Text("Restaurant Name")
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 2, trailing: 0))
@@ -37,6 +40,7 @@ struct ReviewListCardComponent: View {
                 .foregroundColor(.black)
                 Spacer()
                 
+//                Trash Button
                 Button{
                     
                 } label: {
@@ -53,10 +57,12 @@ struct ReviewListCardComponent: View {
             }
             .padding(8)
             .overlay(
+//                Border
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(.orange, lineWidth: 2)
             )
             .background(
+//                Shape White
                 Color(.white),
                 in: RoundedRectangle(cornerRadius: 8)
             )

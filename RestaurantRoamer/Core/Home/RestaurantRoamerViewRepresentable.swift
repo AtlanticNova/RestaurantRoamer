@@ -10,6 +10,7 @@ import MapKit
 
 struct RestaurantRoamerMapViewRepresentable: UIViewRepresentable {
     
+    // MARK: Show Map View
     let mapView = MKMapView()
     let locationManager = LocationManager()
     
@@ -23,9 +24,10 @@ struct RestaurantRoamerMapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
+        
+        // MARK: Recenter Location
         if let userTrackingButton = uiView.subviews.first(where: { $0 is MKUserTrackingButton }) as? MKUserTrackingButton {
             userTrackingButton.frame = CGRect(origin: CGPoint(x: 334, y: 90), size: CGSize(width: 40, height: 40))
-            
         } else {
             let userTrackingButton = MKUserTrackingButton(mapView: (uiView as! MKMapView))
             userTrackingButton.frame = CGRect(origin: CGPoint(x: 334, y: 90), size: CGSize(width: 40, height: 40))

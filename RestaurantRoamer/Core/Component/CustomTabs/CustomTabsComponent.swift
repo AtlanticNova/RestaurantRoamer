@@ -16,6 +16,7 @@ struct CustomTabComponent: View {
         ("map", "Map"),
         ("star", "Review")
     ]
+    
     var body: some View {
         ZStack {
             // MARK: Rounded Rectangle
@@ -32,7 +33,6 @@ struct CustomTabComponent: View {
                         tabSelection = index + 1
                     } label: {
                         VStack(spacing: 8) {
-                            
                             if index + 1 == tabSelection {
                                 RoundedRectangle(cornerRadius: 2)
                                     .frame(height: 8)
